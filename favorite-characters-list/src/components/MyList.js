@@ -11,7 +11,6 @@ class MyList extends Component {
                     <h1>{val}</h1>
                     <button onClick={() => this.props.newFavorite(val)}>Make Favorite</button>
                 </div>
-                
             )
         })
         return (

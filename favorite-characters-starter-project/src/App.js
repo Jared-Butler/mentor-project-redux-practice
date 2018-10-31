@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CharacterList from './components/CharacterList'
 
 class App extends Component {
+
+  constructor(){
+    super()
+    this.state = {
+      userInput: ""
+    }
+  }
+
+  addNewCharacter = () => {
+    this.setState({
+      userInput: ""
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Favorite Character: </h1>
+
+        <input
+          type="text"
+          value={this.state.userInput}
+          onChange={(e) => {this.setState({userInput: e.target.value})}}/>
+
+        <button onClick={this.addNewCharacter}>Add Character</button>
+
+        <CharacterList />
       </div>
     );
   }
