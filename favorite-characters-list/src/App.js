@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { connect} from 'react-redux'
+import {Provider, connect} from 'react-redux'
+import store from './dux/store'
 import {addCharacter} from "./dux/reducer"
 import MyList from './components/MyList'
 
@@ -27,9 +28,9 @@ class App extends Component {
         <div className="App">
           <h1>Favorite Character: {this.props.favoriteCharacter}</h1>
 
-          <input 
-            type="text" 
-            value={this.state.userInput} 
+          <input
+            type="text"
+            value={this.state.userInput}
             onChange={(e) => {this.setState({userInput: e.target.value})}} />
 
             <button onClick={() => this.addNewCharacter(this.state.userInput)}>Add Character</button>
