@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import CharacterList from './components/CharacterList'
+import Home from "./components/Home"
+
 
 class App extends Component {
 
@@ -21,16 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Favorite Character: </h1>
-
-        <input
-          type="text"
-          value={this.state.userInput}
-          onChange={(e) => {this.setState({userInput: e.target.value})}}/>
-
-        <button onClick={this.addNewCharacter}>Add Character</button>
-
-        <CharacterList />
+        <Home />
       </div>
     );
   }
